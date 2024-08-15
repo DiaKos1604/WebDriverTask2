@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDriverTask2", "WebDriverTask2\WebDriverTask2.csproj", "{59D58EE8-CC28-43DE-9494-50D886EB9666}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59D58EE8-CC28-43DE-9494-50D886EB9666}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D58EE8-CC28-43DE-9494-50D886EB9666}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D58EE8-CC28-43DE-9494-50D886EB9666}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D58EE8-CC28-43DE-9494-50D886EB9666}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85F74F56-B509-4F4D-B9F8-467AFC7B2455}
+	EndGlobalSection
+EndGlobal
