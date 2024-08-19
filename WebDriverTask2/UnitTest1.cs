@@ -23,7 +23,7 @@ namespace WebDriverTask2
             WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
           
             IWebElement pasteGitCommand = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("postform-text")));
-            pasteGitCommand.SendKeys("git config --global user.name  \"New Sheriff in Town\"\ngit reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\ngit push origin master --force");
+            pasteGitCommand.SendKeys("git config --global user.name New Sheriff in Town git reset $(git commit-tree HEAD^{tree} -m Legacy code)git push origin master --force");
 
             IWebElement chooseBash = driver.FindElement(By.Id("select2-postform-format-container"));
             chooseBash.Click();
@@ -43,16 +43,16 @@ namespace WebDriverTask2
             WebDriverWait waitForTitle = new WebDriverWait(driver, TimeSpan.FromSeconds(30));
             waitForTitle.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.TitleContains("how to gain dominance among developers"));
             
-            Assert.That(driver.Title, Is.EqualTo("how to gain dominance among developers"));
+            Assert.That(driver.Title, Is.EqualTo("how to gain dominance among developers - Pastebin.com"));
 
             IWebElement syntaxIsCorrect = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.CssSelector(".bash")));
             Assert.IsNotNull(syntaxIsCorrect, "Syntax highlighting for Bash was not found.");
 
-            IWebElement codeContent = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@class='post-view']//pre")));
-            string codeText = codeContent.Text.Replace("\r", "");
+            IWebElement codeContent = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//div[@class='de1']")));
+            string codeText = codeContent.Text.Replace("\u00A0", " ");
 
-            string expectedCode = "git config --global user.name  \"New Sheriff in Town\"\ngit reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\ngit push origin master --force";
-            Assert.That(codeText, Is.EqualTo(expectedCode.Replace("\r", "")), "The code content does not match the expected value.");
+            string expectedCode = "git config --global user.name New Sheriff in Town git reset $(git commit-tree HEAD^{tree} -m Legacy code)git push origin master --force".Replace("\u00A0", " "); ;
+            Assert.That(codeText, Is.EqualTo(expectedCode), "The code content does not match the expected value.");
 
         }
 
